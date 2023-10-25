@@ -20,7 +20,7 @@
             <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
         <style>
         
-        @media (max-width: 1336px) {
+        @media (max-width: 1366px) {
             .botoesLogin {
                 margin-left: 50rem;
                 margin-top: 0.1rem;

@@ -3,7 +3,7 @@
     @section('conteudo')
         <style>
         
-        @media (max-width: 1336px) {
+        @media (max-width: 1366px) {
             .card-large-screen{
                 width: 16rem;
                 margin-left:1rem;
