@@ -6,6 +6,7 @@
         <div class="container col-lg-12 m-4">
             <h5>Veja e edite seu perfil. <br> Crie e edite as suas postagens, tudo em só um lugar.</h5>
         </div>
+        <hr style="margin-right: 1rem; margin-left: 2rem;">
         <div class="row">
             <div class="col-lg-5 m-4">
                 <div class="container border shadow py-2 rounded">
@@ -17,7 +18,7 @@
                     </h4>
                         <p>Crie uma postagem agora mesmo, rapido e facil</p>
                         <div class="d-grid gap-2">
-                            <a class="btn btn-primary" href="/criar" type="button">Nova postagem</a>
+                            <a class="btn btn-dark" href="/criar" type="button">Nova postagem</a>
                         </div>
                 </div>
             </div>
@@ -32,7 +33,7 @@
                     </h4>
                     <p>Nome de usuario, nova senha, email, tudo que precise sobre</p>
                     <div class="d-grid gap-2">
-                        <a class="btn btn-primary" type="button" href="{{ route('profile.edit') }}">{{ __('Meu perfil') }}</a>
+                        <a class="btn btn-dark" type="button" href="{{ route('profile.edit') }}">{{ __('Meu perfil') }}</a>
                     </div>
                 </div>
             </div>
@@ -40,7 +41,7 @@
         <h5 class="m-4">Minhas postagens</h5>
         <div class="container-fluid text-center">
             <table class="table table-responsive">
-                <thead class="table-primary">
+                <thead class="table bg-dark text-white">
                     <tr>
                         <th scope="col-1">id</th>
                         <th scope="col-5">Titulo</th>
@@ -52,21 +53,21 @@
                 <tbody>
                     <tr>
                     <th scope="row">1</th>
-                    <td>Mark</td>
+                    <td class="text-primary">Mark</td>
                     <td>Otto</td>
                     <td>08-08-2020</td>
                     <td><a class="btn btn-sm btn-danger" href="/remover" type="button">Remover</a>
                     </tr>
                     <tr>
                     <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
+                    <td class="text-primary">Jacob</td>
+                    <td >Thornton</td>
                     <td>08-08-2020</td>
                     <td><a class="btn btn-sm btn-danger" href="/remover" type="button">Remover</a>
                     </tr>
                     <tr>
                     <th scope="row">3</th>
-                    <td>Jacob</td>
+                    <td class="text-primary">Jacob</td>
                     <td>Thornton</td>
                     <td>08-08-2020</td>
                     <td><a class="btn btn-sm btn-danger" href="/remover" type="button">Remover</a>
