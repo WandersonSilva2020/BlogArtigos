@@ -34,14 +34,16 @@
                 
                 $("#criarArtigo").click(function (e) { 
                     e.preventDefault();
-                    alert("oi");
-                    var dados = {
-                        "titulo" : $("#titulo").val(),
-                        "autor" : $("#autor").val(),
-                        "foto" : $("#foto").val(),
-                        "categoria" : $("#categoria").val(),
-                        "descricao" : tinymce.activeEditor.getContent(),
-                    };
+                    
+                    var formData = new FormData();
+
+                    formData.append("titulo", $("#titulo").val());
+                    formData.append("autor", $("#autor").val());
+                    formData.append("categoria", $("#categoria").val());
+                    formData.append("descricao_postagem", tinymce.activeEditor.getContent());
+
+                    var foto = $("#foto")[0].files[0];
+                    formData.append("foto", foto);
                     
                     $.ajaxSetup({
                         headers: {
@@ -52,10 +54,48 @@
                     $.ajax({
                         type: "POST",
                         url: "/criar",
-                        data: dados,
+                        data: formData, 
+                        contentType: false,
+                        processData: false,
                         dataType: "json",
                         success: function (response) {
-                            // Faça algo com a resposta, se necessário.
+                            let id = response.id;
+                            window.location.href = '/postagem/' + id;
+                        },
+                        error: function (xhr, status, error) {
+                            if (xhr.status === 422) {
+                            
+                            var errors = xhr.responseJSON.erros;
+
+                            var errorMessages = '';
+                            for (var key in errors) {
+                                if (errors.hasOwnProperty(key)) {
+                                    errorMessages += errors[key][0] + '<br>';
+                                }
+                            }
+
+                            $.confirm({
+                                title: ` 
+                                    <svg xmlns="http://www.w3.org/2000/svg" style="color: red;" width="30" height="30" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                                    </svg>
+                                    Erro de Validação`,
+                                content: errorMessages,
+                                type: 'red',
+                                typeAnimated: true,
+                                buttons: {
+                                    ok: {
+                                        text: 'OK',
+                                        btnClass: 'btn-primary',
+                                        action: function(){
+                                            //
+                                        }
+                                    }
+                                }
+                            }); 
+                        } else {
+                            alert("Erro desconhecido: " + error);
+                        }
                         }
                     });
                 });
@@ -73,10 +113,7 @@
                 <label for="titulo" class="form-label"><b>Titulo</b></label>
                 <input type="text" class="form-control" id="titulo" placeholder="Informe o Titulo aqui">
             </div>
-            <div class="mb-3">
-                <label for="Autor" class="form-label"><b>Autor</b></label>
-                <input type="text" class="form-control" id="Autor" placeholder="Informe o Autor aqui">
-            </div>
+            
             <div class="mb-3">
                 <label for="categoria" class="form-label"><b>categoria</b></label>
                 <input type="text" class="form-control" id="categoria" placeholder="Informe o categoria aqui">
@@ -86,8 +123,8 @@
                 <input class="form-control form-control-sm" id="foto" type="file">
             </div>
             <div class="mb-3">
-                <label for="descricaoArtigo" class="form-label"><b>Conteudo do artigo </b></label>
-                <textarea class="form-control" id="descricaoArtigo" rows="15"></textarea>
+                <label for="descricao_postagem" class="form-label"><b>Conteudo do artigo </b></label>
+                <textarea class="form-control" id="descricao_postagem" rows="15"></textarea>
             </div>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button class="btn btn-primary me-md-2" id="criarArtigo" type="button">Postar</button>
