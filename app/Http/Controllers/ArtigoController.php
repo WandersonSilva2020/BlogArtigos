@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 class ArtigoController extends Controller
 {
-    public function create(Request $request){
+    public function store(Request $request){
         try {
             
             $rules = [
