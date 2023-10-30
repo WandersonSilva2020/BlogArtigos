@@ -15,51 +15,51 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="card" style="width: 16rem; margin-left:1rem;">
-                <img src="https://1.bp.blogspot.com/-wnV4ZvWjJaQ/VupiUH0Il2I/AAAAAAAADYs/rwc4kAnERYgXU8EXqsQGrH5-_o8a3_28w/s1600/business-839788_960_720.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                <p class="card-text">
-                    <a href="#">
-                        <h6>Titulo da noticia</h6>
-                    </a>
-                    <p>Noticia de teste, apenas para fins ilustrativos</p>
-                </p>
+                <div class="card" style="width: 16rem; margin-left:1rem;">
+                    <img src="{{$postagens[0]->foto}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <p class="card-text">
+                        <a href="#">
+                            <h6>Titulo da noticia</h6>
+                        </a>
+                        <p>Noticia de teste, apenas para fins ilustrativos</p>
+                    </p>
+                    </div>
                 </div>
-            </div>
-            <div class="card" style="width: 16rem; margin-left:1rem;">
-                <img src="https://1.bp.blogspot.com/-wnV4ZvWjJaQ/VupiUH0Il2I/AAAAAAAADYs/rwc4kAnERYgXU8EXqsQGrH5-_o8a3_28w/s1600/business-839788_960_720.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                <p class="card-text">
-                    <a href="#">
-                        <h6>Titulo da noticia</h6>
-                    </a>
-                    <p>Noticia de teste, apenas para fins ilustrativos</p>
-                </p>
-                </div>
-            </div>
-            <div class="card" style="width: 16rem; margin-left:1rem;">
-                <img src="https://1.bp.blogspot.com/-wnV4ZvWjJaQ/VupiUH0Il2I/AAAAAAAADYs/rwc4kAnERYgXU8EXqsQGrH5-_o8a3_28w/s1600/business-839788_960_720.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                <p class="card-text">
-                    <a href="#">
-                        <h6>Titulo da noticia</h6>
-                    </a>
-                    <p>Noticia de teste, apenas para fins ilustrativos</p>
-                </p>
-                </div>
-            </div>
-            <div class="card" style="width: 16rem; margin-left:1rem;">
-                <img src="https://1.bp.blogspot.com/-wnV4ZvWjJaQ/VupiUH0Il2I/AAAAAAAADYs/rwc4kAnERYgXU8EXqsQGrH5-_o8a3_28w/s1600/business-839788_960_720.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                <p class="card-text">
-                    <a href="#">
-                        <h6>Titulo da noticia</h6>
-                    </a>
-                    <p>Noticia de teste, apenas para fins ilustrativos</p>
-                </p>
-                </div>
-            </div>
 
+            <div class="card" style="width: 16rem; margin-left:1rem;">
+                <img src="{{$postagens[1]->foto}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <p class="card-text">
+                    <a href="#">
+                        <h6>Titulo da noticia</h6>
+                    </a>
+                    <p>Noticia de teste, apenas para fins ilustrativos</p>
+                </p>
+                </div>
+            </div>
+            <div class="card" style="width: 16rem; margin-left:1rem;">
+                <img src="{{$postagens[2]->foto}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <p class="card-text">
+                    <a href="#">
+                        <h6>Titulo da noticia</h6>
+                    </a>
+                    <p>Noticia de teste, apenas para fins ilustrativos</p>
+                </p>
+                </div>
+            </div>
+            <div class="card" style="width: 16rem; margin-left:1rem;">
+                <img src="{{$postagens[3]->foto}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <p class="card-text">
+                    <a href="#">
+                        <h6>Titulo da noticia</h6>
+                    </a>
+                    <p>Noticia de teste, apenas para fins ilustrativos</p>
+                </p>
+                </div>
+            </div>
         </div>
     </div>
     <div class="container-fluid">
