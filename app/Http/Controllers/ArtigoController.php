@@ -10,6 +10,11 @@ use Illuminate\Http\Request;
 
 class ArtigoController extends Controller
 {
+
+    public function index(){
+        $postagens = Postagem::orderBy('id', 'asc')->get();
+        return view('welcome',['postagens' => $postagens]);
+    }
     public function store(Request $request){
         try {
             
@@ -60,5 +65,13 @@ class ArtigoController extends Controller
         } catch (\Exception $e) {
             return response()->json(['mensagem' => 'Erro na requisição: ' . $e->getMessage()], 500);
         }
+    }
+    public function postagemExibir($id){
+        try{
+            $postagem = Postagem::find($id);
+            return view('postagem', ['postagem' => $postagem]);
+        } catch (\Exception $e) {
+            return view('pagina_de_erro',['message' => 'Postagem não existe !']);
+        }       
     }
 }

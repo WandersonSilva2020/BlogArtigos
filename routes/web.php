@@ -20,12 +20,14 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', [ArtigoController::class, 'index'])->name('poastagem.todos');
+
 Route::get('/procurar', function () {
     return view('procurar');
 });
 
-
-
+Route::get('/postagem/{id}',[ArtigoController::class, 'postagemExibir'])->name('postagem.ver');
 
 
 Route::middleware('auth')->group(function () {
