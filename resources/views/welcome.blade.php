@@ -64,13 +64,13 @@
     </div>
     <div class="container-fluid">
         <div class="row ">
-            <div class="col-md-9  mt-4" style="max-width: 1000px; margin-left:5%;">
+            <div class="col-md-9  mt-4" style="max-width: 1800px; margin-left:0.5%;">
                 <div class="row bg-dark border rounded">
                     <span class="text-white">Novos assuntos</span>
                 </div>
                 @foreach ($postagens as $postagem)
                     <div class="row m-2">
-                        <div class="card border border-black shadow" style="max-width: 940px;">
+                        <div class="card border border-black shadow" style="max-width: 1800px;">
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <img src="{{$postagem->foto}}" style="min-width: 310px; min-height:210px;" class="img-fluid m-1 rounded" alt="...">
@@ -89,9 +89,9 @@
                     </div>
                 @endforeach
             </div>
-            <div class="col-md-3 " style="max-width: 300px; margin-left:1%;">
+            <div class="col-md-3 " style="max-width: 500px; margin-left:1%;">
                 <div class="row">
-                    <span class="text-white ml-2 bg-dark mt-4">Autores</span>
+                    <span class="text-white ml-2 bg-dark mt-4 border rounded">Autores</span>
                 </div>
                 <div class="row">
 
