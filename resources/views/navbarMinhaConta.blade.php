@@ -72,7 +72,7 @@
                             <a class="nav-link" href="/criar">criar postagem</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('profile.edit') }}">{{ __('Profile') }}</a>
+                            <a class="nav-link" href="{{ route('dashboard') }}">{{ __('Minha Conta') }}</a>
                         </li>
                         <li class="nav-item" >
                             @if (Route::has('register'))
