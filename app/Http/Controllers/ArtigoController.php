@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Exception;
 use App\Models\Postagem;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -74,4 +75,14 @@ class ArtigoController extends Controller
             return view('pagina_de_erro',['message' => 'Postagem não existe !']);
         }       
     }
+
+    public function PostagemBuscar(Request $request) {
+        $pesquisa = $request->pesquisa; 
+            $postagens = DB::table('postagens')
+                ->where('titulo', 'like', '%' . $pesquisa . '%')
+                ->get();
+        
+        return view('procurar', ['postagens' => $postagens, 'pesquisa' => $pesquisa]);
+    }
+    
 }

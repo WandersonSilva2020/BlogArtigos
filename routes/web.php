@@ -27,8 +27,10 @@ Route::get('/procurar', function () {
     return view('procurar');
 });
 
-Route::get('/postagem/{id}',[ArtigoController::class, 'postagemExibir'])->name('postagem.ver');
 
+
+Route::get('/postagem/{id}',[ArtigoController::class, 'postagemExibir'])->name('postagem.ver');
+Route::get('/procurar',[ArtigoController::class, 'postagemBuscar'])->name('postagem.buscar');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

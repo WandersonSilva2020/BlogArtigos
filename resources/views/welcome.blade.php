@@ -60,8 +60,8 @@
         </div>
     </div>
     <div class="container-fluid">
-        <div class="row ">
-            <div class="col-md-9  mt-4" style="max-width: 1800px; margin-left:0.5%;">
+        <div class="row">
+            <div class="col-md-8  mt-4" style="max-width: 1800px; margin-left:0.5%;">
                 <div class="row bg-dark border rounded">
                     <span class="text-white">Novos assuntos</span>
                 </div>
