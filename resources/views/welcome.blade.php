@@ -20,9 +20,8 @@
                     <div class="card-body">
                     <p class="card-text">
                         <a href="#">
-                            <h6>Titulo da noticia</h6>
+                            <h6>{{$postagens[0]->titulo}}</h6>
                         </a>
-                        <p>Noticia de teste, apenas para fins ilustrativos</p>
                     </p>
                     </div>
                 </div>
@@ -32,9 +31,9 @@
                 <div class="card-body">
                 <p class="card-text">
                     <a href="#">
-                        <h6>Titulo da noticia</h6>
+                        <h6>{{$postagens[1]->titulo}}</h6>
                     </a>
-                    <p>Noticia de teste, apenas para fins ilustrativos</p>
+                    
                 </p>
                 </div>
             </div>
@@ -43,9 +42,8 @@
                 <div class="card-body">
                 <p class="card-text">
                     <a href="#">
-                        <h6>Titulo da noticia</h6>
+                        <h6>{{$postagens[2]->titulo}}</h6>
                     </a>
-                    <p>Noticia de teste, apenas para fins ilustrativos</p>
                 </p>
                 </div>
             </div>
@@ -54,9 +52,8 @@
                 <div class="card-body">
                 <p class="card-text">
                     <a href="#">
-                        <h6>Titulo da noticia</h6>
+                        <h6>{{$postagens[3]->titulo}}</h6>
                     </a>
-                    <p>Noticia de teste, apenas para fins ilustrativos</p>
                 </p>
                 </div>
             </div>
