@@ -20,15 +20,6 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/', [ArtigoController::class, 'index'])->name('poastagem.todos');
-
-Route::get('/procurar', function () {
-    return view('procurar');
-});
-
-
-
 Route::get('/postagem/{id}',[ArtigoController::class, 'postagemExibir'])->name('postagem.ver');
 Route::get('/procurar',[ArtigoController::class, 'postagemBuscar'])->name('postagem.buscar');
 
@@ -38,7 +29,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/dashboard',[DashboardController::class, 'show'])->name('dashboard');
-    Route::get('/remover/{id}',[DashboardController::class, 'delete'])->name('delete');
+    Route::delete('/remover/{id}',[ArtigoController::class, 'delete'])->name('delete');
 
     Route::post('/criar', [ArtigoController::class, 'store'])->name('artigo.create');
     Route::get('/criar', function () {

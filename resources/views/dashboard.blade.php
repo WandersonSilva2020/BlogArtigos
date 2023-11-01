@@ -1,27 +1,42 @@
 @extends('navbarMinhaConta')
     @section('conteudo')
-
+    <head>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>    
+    </head>
+    
     <script>
         $(document).ready(function () {
+            $.ajaxSetup({
+                headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+            });
             $(".remover").click(function (e) { 
-                e.preventDefault();
-                let id = (this).val(); 
-                alert(id);
-                $.ajax({
-                    type: "Delete",
-                    url: "/remover/"+ id,
-                    dataType: "JSON",
-                    success: function (response) {
-                        $.alert({
-                            columnClass: 'col-md-4 col-md-offset-4',
-                            type: 'green',
-                            theme: 'modern',
-                            title:  `Postagem deletada`,
-                            content: ` `,
-                        });
+            e.preventDefault();
+            let id = $(this).data('id');               
+
+            $.ajax({
+                type: "Delete",
+                url: "/remover/"+ id,
+                dataType: "JSON",
+                success: function (response) {
+                    $.alert({
+                    columnClass: 'col-md-4 col-md-offset-4',
+                    type: 'green',
+                    theme: 'modern',
+                    title: 'Sucesso!',
+                    content: 'A postagem foi apagada <i class="fas fa-check-circle"></i>',
+                    onClose: function () {
+                        window.location.reload();
                     }
                 });
+
+                }
             });
+        });
         });
     </script>
         <div class="container m-4">
@@ -82,7 +97,7 @@
                                 <td class="text-primary">{{$postagem->titulo}}</td>
                                 <td>{{$user->name}}</td>
                                 <td>{{$postagem->created_at}}</td>
-                                <td><a class="btn btn-sm btn-danger remover" value="{{$postagem->id}}" type="button">Remover</a>
+                                <td><a class="btn btn-sm btn-danger remover" data-id="{{$postagem->id}}" type="button">Remover</a>
                             </tr>
                         @endforeach
                     @endif

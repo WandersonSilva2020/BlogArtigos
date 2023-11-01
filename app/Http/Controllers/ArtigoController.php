@@ -84,5 +84,21 @@ class ArtigoController extends Controller
         
         return view('procurar', ['postagens' => $postagens, 'pesquisa' => $pesquisa]);
     }
+
+    public function delete($id){
+        $postagem = Postagem::find($id);
+    
+        if ($postagem && $postagem->autor_id == auth()->user()->id) {
+            $caminhoArquivo = public_path('fotos/' . $postagem->foto);
+            
+            if (file_exists($caminhoArquivo)) {
+                unlink($caminhoArquivo);
+            }
+            $postagem->delete();
+            return response()->json([], 201); 
+        } else {
+            return response()->json([], 401); 
+        }
+    }
     
 }
