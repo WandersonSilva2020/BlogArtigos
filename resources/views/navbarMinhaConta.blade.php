@@ -72,8 +72,13 @@
                             <a class="nav-link" href="/criar">criar postagem</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('profile.edit') }}">{{ __('Profile') }}</a>
+                            <a class="nav-link" href="{{ route('dashboard') }}">{{ __('Minha Conta') }}</a>
                         </li>
+                        <li class="nav-item" >
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="nav-link ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Criar conta</a>
+                            @endif
+                    </li>
                         <li  class="nav-item">
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf

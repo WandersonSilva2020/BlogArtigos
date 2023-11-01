@@ -94,7 +94,7 @@ section.sobre img{
     </head>
     <body>
         <section class="sobre">
-            <div class="container-fluid">
+            <div class="container-fluid" style="zoom: 90%">
                 <div class="row">
                     <div class="col-md-7">
                         <div class="center">

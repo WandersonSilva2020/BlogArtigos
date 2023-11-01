@@ -20,9 +20,8 @@
                     <div class="card-body">
                     <p class="card-text">
                         <a href="#">
-                            <h6>Titulo da noticia</h6>
+                            <h6>{{$postagens[0]->titulo}}</h6>
                         </a>
-                        <p>Noticia de teste, apenas para fins ilustrativos</p>
                     </p>
                     </div>
                 </div>
@@ -32,9 +31,9 @@
                 <div class="card-body">
                 <p class="card-text">
                     <a href="#">
-                        <h6>Titulo da noticia</h6>
+                        <h6>{{$postagens[1]->titulo}}</h6>
                     </a>
-                    <p>Noticia de teste, apenas para fins ilustrativos</p>
+                    
                 </p>
                 </div>
             </div>
@@ -43,9 +42,8 @@
                 <div class="card-body">
                 <p class="card-text">
                     <a href="#">
-                        <h6>Titulo da noticia</h6>
+                        <h6>{{$postagens[2]->titulo}}</h6>
                     </a>
-                    <p>Noticia de teste, apenas para fins ilustrativos</p>
                 </p>
                 </div>
             </div>
@@ -54,17 +52,16 @@
                 <div class="card-body">
                 <p class="card-text">
                     <a href="#">
-                        <h6>Titulo da noticia</h6>
+                        <h6>{{$postagens[3]->titulo}}</h6>
                     </a>
-                    <p>Noticia de teste, apenas para fins ilustrativos</p>
                 </p>
                 </div>
             </div>
         </div>
     </div>
     <div class="container-fluid">
-        <div class="row ">
-            <div class="col-md-9  mt-4" style="max-width: 1800px; margin-left:0.5%;">
+        <div class="row">
+            <div class="col-md-8  mt-4" style="max-width: 1800px; margin-left:0.5%;">
                 <div class="row bg-dark border rounded">
                     <span class="text-white">Novos assuntos</span>
                 </div>
