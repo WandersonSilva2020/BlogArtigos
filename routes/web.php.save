@@ -23,7 +23,7 @@ Route::get('/procurar', function () {
     return view('procurar');
 });
 
-Route::get('/register',[ProfileController::class, 'register'])->name('profile.register');
+Route::get('/register',;
 Route::get('/postagem/{id}',[ArtigoController::class, 'postagemExibir'])->name('postagem.ver');
 Route::get('/procurar',[ArtigoController::class, 'postagemBuscar'])->name('postagem.buscar');
 

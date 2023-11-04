@@ -46,7 +46,7 @@ class ArtigoController extends Controller
             if ($request->hasFile('foto')) {
                 $foto = $request->file('foto');
                 $nomeArquivo = uniqid() . '_' . now()->format('YmdHis') . '.' . $foto->getClientOriginalExtension();
-                $caminhoArquivo = $foto->move('C:\laragon\www\BlogArtigos\public\fotos', $nomeArquivo);
+                $caminhoArquivo = $foto->move(public_path('fotos'), $nomeArquivo);
                 $caminhoArquivo = 'fotos/' . $nomeArquivo;
             }else{
                 $caminhoArquivo = " ";
